@@ -8,7 +8,7 @@ class Solution {
         Collections.sort(al);
         Collections.sort(bl);
         /*System.out.println(al + " " + bl);*/
-        if(al.equals(bl) && al.size()==bl.size()){
+        if(al.equals(bl)){
             ans=true;
         }
         else{
