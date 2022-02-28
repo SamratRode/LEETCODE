@@ -19,7 +19,7 @@ class Solution {
                 if(count==0){
                     s=s+nums1[i]+"->";
                 }
-                count++;
+                count=1;
                 continue;
                 
             }
