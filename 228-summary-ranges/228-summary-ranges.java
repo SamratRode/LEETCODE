@@ -3,7 +3,7 @@ class Solution {
         int[] nums1=new int[nums.length+1];
         for(int i=0;i<nums1.length;i++){
             if(i==nums1.length-1){
-                nums1[i]=10000;
+                nums1[i]=-1;
             }
             else{
                 nums1[i]=nums[i];
