@@ -1,16 +1,19 @@
 class Solution {
     public int missingNumber(int[] nums) {
-        int range=nums.length;
-        Arrays.sort(nums);
-        int missing =-1;
-        for(int i=0;i<=range;i++){
-            if(i==range){
-                missing=range;
-                
+        int missing=-1;
+        TreeSet<Integer> ts=new TreeSet<Integer>();
+        for(int i=0;i<nums.length;i++){
+            ts.add(nums[i]);
+        }
+        ArrayList<Integer> al=new ArrayList<Integer>();
+        al.addAll(ts);
+        for(int i=0;i<=nums.length;i++){
+            if(i==nums.length){
+                missing=nums.length;
             }
             else{
-                if(nums[i]!=i){
-                    missing =i;
+                if(al.get(i)!=i){
+                    missing=i;
                     break;
                 }
             }
