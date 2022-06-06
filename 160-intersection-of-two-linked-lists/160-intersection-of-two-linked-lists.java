@@ -12,16 +12,19 @@
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode ptrA=headA;
-        
+        HashSet<ListNode> set=new HashSet<ListNode>();
         while(ptrA!=null){
-            ListNode ptrB=headB;
-            while(ptrB!=null){
-                if(ptrA==ptrB){
-                    return ptrA;
-                }
-                ptrB=ptrB.next;
-            }
+            set.add(ptrA);
             ptrA=ptrA.next;
+        }
+        
+        ListNode ptrB=headB;
+        
+        while(ptrB!=null){
+            if(set.contains(ptrB)){
+                return ptrB;
+            }
+            ptrB=ptrB.next;
         }
         return null;
     }
