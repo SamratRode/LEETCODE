@@ -3,6 +3,7 @@ class Solution {
         int[] res=new int[2];
         int low=0;
         int high=numbers.length-1;
+        int mid=0;
         
         while(low<high){
             System.out.println(low+" "+high);
