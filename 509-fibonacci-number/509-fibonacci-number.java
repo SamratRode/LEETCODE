@@ -1,19 +1,12 @@
 class Solution {
     public int fib(int n) {
-        int[] dp=new int[n+1];
-        for(int i=0;i<=n;i++){
-            dp[i]=-1;
-        }
-        if(n<=1){
+        if(n==0||n==1)
             return n;
-        }
-        if(dp[n]!=-1){
-            return dp[n];
-        }
-        else{
-            dp[n-1]=fib(n-1);
-            dp[n-2]=fib(n-2);
-            return dp[n-1]+dp[n-2];
-        }
+        int []arr = new int[n+1];
+        arr[0]=0;
+        arr[1]=1;
+        for(int i=2;i<=n;i++)
+            arr[i]= arr[i-1]+arr[i-2];
+        return arr[n];
     }
 }
