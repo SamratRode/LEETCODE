@@ -14,18 +14,26 @@
  * }
  */
 class Solution {
-    ArrayList<Integer> al=new ArrayList<Integer>();
     public List<Integer> preorderTraversal(TreeNode root) {
-        
+        ArrayList<Integer> al=new ArrayList<Integer>();
         if(root==null){
             return al;
-            
         }
-       al.add(root.val);
-        // System.out.print(root.val + " ");
-        preorderTraversal(root.left);
-        preorderTraversal(root.right);
+        Stack<TreeNode> st=new Stack<TreeNode>();
+        st.push(root);
+        // int count=0;
+        while(!st.isEmpty()){
+            // System.out.print(st.peek().val+ " ");
+            root=st.pop();// THis is a very important statement, kyuki jo value nikal raha hu use root bhi to banana hai so that waha se traversal ho
+            al.add(root.val);
+            if(root.right!=null){
+                st.push(root.right);
+            }
+            if(root.left!=null){
+                st.push(root.left);
+            }
+            // count++;
+        }
         return al;
-        
     }
 }
