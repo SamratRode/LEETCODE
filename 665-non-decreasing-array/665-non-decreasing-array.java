@@ -17,9 +17,9 @@ class Solution {
         else{
             nums[i]=nums[i+1];
         }
-        for(int a:nums){
-            System.out.print(a+" ");
-        }
+        // for(int a:nums){
+        //     System.out.print(a+" ");
+        // }
         for(i=0;i<nums.length-1;i++){
             if(nums[i+1]<nums[i]){
                 return false;
