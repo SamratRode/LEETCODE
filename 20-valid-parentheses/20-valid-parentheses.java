@@ -1,15 +1,13 @@
 class Solution {
     public boolean isValid(String s) {
-         ArrayList<Character> open=new ArrayList<Character>();
+         
         
         Stack<Character> st=new Stack<Character>();
-        open.add('{');
-        open.add('[');
-        open.add('(');
+        
         
         for(int i=0;i<s.length();i++){
-            // System.out.print(st);
-            if(open.contains(s.charAt(i))){
+            
+            if(s.charAt(i)=='(' || s.charAt(i)=='[' ||s.charAt(i)=='{'){
                 
                 st.push(s.charAt(i));
                 
