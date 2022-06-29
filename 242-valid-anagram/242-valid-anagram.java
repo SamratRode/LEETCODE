@@ -3,16 +3,17 @@ class Solution {
         if(s.length()!=t.length()){
             return false;
         }
-        TreeMap<Character,Integer> tm=new TreeMap<Character,Integer>();
-        TreeMap<Character,Integer> tm1=new TreeMap<Character,Integer>();
+        ArrayList<Character> ch=new ArrayList<Character>();
+        ArrayList<Character> ch1=new ArrayList<Character>();
         for(int i=0;i<s.length();i++){
-            tm.put(s.charAt(i),tm.getOrDefault(s.charAt(i),0)+1);
-            tm1.put(t.charAt(i),tm1.getOrDefault(t.charAt(i),0)+1);
+            ch.add(s.charAt(i));
+            ch1.add(t.charAt(i));
         }
-        if(tm.equals(tm1)){
+        Collections.sort(ch);
+        Collections.sort(ch1);
+        if(ch.equals(ch1)){
             return true;
         }
         return false;
-        
     }
 }
