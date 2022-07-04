@@ -1,25 +1,19 @@
-class Solution {
+public class Solution {
     public boolean isPalindrome(String s) {
-        s=s.toLowerCase();
-        String s1="";
-        for(int i=0;i<s.length();i++){
-            if((s.charAt(i)>=97 && s.charAt(i)<=122)||(s.charAt(i)>=48) && (s.charAt(i)<=57)){
-                s1=s1+s.charAt(i);
+        int start = 0; 
+        int end = s.length() - 1;
+        while(start <= end) {
+            while(start <= end && !Character.isLetterOrDigit(s.charAt(start))) {
+                start++;
             }
-        }
-        int a=0;
-        if(s1.length()==0){
-            return true;
-        }
-        int z=s1.length()-1;
-        while(a<=z){
-            if(s1.charAt(a)!=s1.charAt(z)){
+            while(start <= end && !Character.isLetterOrDigit(s.charAt(end))) {
+                end--;
+            }
+            if(start <= end && Character.toLowerCase(s.charAt(start)) != Character.toLowerCase(s.charAt(end))) {
                 return false;
             }
-            else{
-                a++;
-                z--;
-            }
+            start++;
+            end--;
         }
         return true;
     }
