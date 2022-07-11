@@ -3,12 +3,17 @@ class Solution {
         if(x<0){
             return false;
         }
-        String s=String.valueOf(x);
-        String a="";
-        for(int i=0;i<s.length();i++){
-            a=s.charAt(i)+a;
+        int a=x;
+        int reverse=0;
+        while(a!=0){
+            int digit=a%10;
+            reverse=reverse*10 + digit;
+            a=a/10;
+            
         }
-        // System.out.println(s+" "+a);
-        return s.equals(a);
+        if(x==reverse){
+            return true;
+        }
+        return false;
     }
 }
