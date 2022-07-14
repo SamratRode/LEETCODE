@@ -21,6 +21,7 @@ class Solution {
                     l.add(nums[high]);
                     ll.add(l);
                     low++;
+                    high--;
                 }
             }
         }
