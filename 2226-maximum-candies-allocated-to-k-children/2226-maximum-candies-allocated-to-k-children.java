@@ -2,7 +2,7 @@ class Solution {
     public int maximumCandies(int[] candies, long k) {
         
         long left=0;
-        long right=100000000;
+        long right=10000000;
         
         while(left<right){
             long mid=(left+right+1)/2;
