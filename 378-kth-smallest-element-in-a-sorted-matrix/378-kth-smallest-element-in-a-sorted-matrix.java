@@ -6,8 +6,18 @@ class Solution {
                 al.add(i);
             }
         }
-        Collections.sort(al);
-        return al.get(k-1);
+        PriorityQueue<Integer> pq=new PriorityQueue<Integer>(Collections.reverseOrder());
+        for(int i=0;i<al.size();i++){
+            pq.add(al.get(i));
+            if(pq.size()>k){
+               
+                pq.remove();
+            }
+          
+            
+        }
+      
+        return pq.peek();
         
     }
 }
