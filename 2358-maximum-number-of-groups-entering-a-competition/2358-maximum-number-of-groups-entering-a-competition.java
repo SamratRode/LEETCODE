@@ -11,6 +11,6 @@ class Solution {
                 low=mid;
             }
         }
-        return low;
+        return high;
     }
 }
