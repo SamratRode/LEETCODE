@@ -12,6 +12,7 @@ class Solution {
             }
             else if(j-i+1==3){
                 if(isUnique(al)){
+                    // System.out.println(al);
                     count++;
                 }
                 al.remove(0);
@@ -23,10 +24,9 @@ class Solution {
         
     }
     public boolean isUnique(ArrayList<Character> al){
-        HashSet<Character> hs= new HashSet<Character>(al);
-        if(al.size()==hs.size()){
-            return true;
+        if(al.get(0)==al.get(1) || al.get(1)==al.get(2) || al.get(0)==al.get(2)){
+            return false;
         }
-        return false;
+        return true;
     }
 }
