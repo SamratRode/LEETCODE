@@ -19,14 +19,8 @@ class Solution {
             }
             
         }
-        int a=0;
-        for(int i=0;i<perm.length;i++){
-            if(!hs.contains(i)){
-                a=i;
-                break;
-            }
-        }
-        perm[perm.length-1]=a;
+        
+        perm[perm.length-1]=lo;
         return perm;
     }
 }
