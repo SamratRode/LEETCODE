@@ -8,6 +8,9 @@ class Solution {
                 String res="";
                 for(int j=0;res.length()<s.length();j++){
                     res=res+a;
+                    if(!s.contains(res)){
+                        break;
+                    }
                 }
                 if(res.equals(s)){
                    return true; 
